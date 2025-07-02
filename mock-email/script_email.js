@@ -15,14 +15,14 @@ class ProductManager {
     }
 
     setupEventListeners() {
-        if (this.loadMoreButton) {
-            console.log('Botão pronto para ouvir clique.');
-            this.loadMoreButton.addEventListener('click', () => {
-                console.log('Botão clicado!');
-                this.loadMoreProducts();
-            });
-        }
+    if (this.loadMoreButton) {
+        console.log('Botão pronto para ouvir clique.');
+        this.loadMoreButton.addEventListener('click', () => {
+            console.log('Botão clicado! Redirecionando para index.html');
+            window.location.href = '../index.html';
+        });
     }
+}
 
     /**
      * Load products from API
