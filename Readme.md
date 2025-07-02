@@ -28,6 +28,7 @@ Para executar este projeto localmente, siga os passos abaixo:
    ```bash
     https://vercel.com/inevitavinhos-projects/desafio-bold
    ```
+   **ou**
 
 1.  **Clone o repositório:**
 
