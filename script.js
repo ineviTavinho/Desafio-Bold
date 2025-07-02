@@ -309,6 +309,7 @@ class NewsletterManager {
         // Remove success message after 5 seconds
         setTimeout(() => {
             successMessage.remove();
+            window.location.href = 'mock-email/email.html';
         }, 2000);
     }
 }
