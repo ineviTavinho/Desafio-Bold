@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+header{
+    top: 0px;
+    left: 0px;
+    width: 1500px;
+    height: 399px;
+    /* UI Properties */
+    background: #707070 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+    text-align: center;
+}
+
+.page-top{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.page-top h1{
+    /* Layout Properties */
+    top: 92px;
+    left: 571px;
+    width: 358px;
+    height: 48px;
+    line-height: 48px;
+    /* UI Properties */
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: center;
+    font: normal normal bold 40px/49px Helvetica Neue;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    
+}
+
+.page-top h2{
+    top: 164px;
+    left: 476px;
+    width: 548px;
+    height: 16px;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 0px;
+    font: normal normal normal 20px/24px Helvetica Neue;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    
+}
+
+
+.page-top p{
+    padding-top: 0;
+    top: 164px;
+    left: 476px;
+    width: 548px;
+    height: 16px;
+    text-align: center;
+    font: normal normal normal 14px/16px Helvetica Neue;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin: 0;
+}
+
+header nav{
+    align-items: center;
+    line-height: 40px;
+}
+
+header nav li:hover{
+    background-color: #777;
+    color: black!;
+}
+
+header nav li{
+    top: 230px;
+    left: 371px;
+    width: 160px;
+    height: 40px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    opacity: 1;
+}
+
+header nav ul{
+   list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+header nav a{
+    /* Layout Properties */
+    top: 242px;
+    left: 594px;
+    width: 114px;
+    height: 16px;
+    /* UI Properties */
+    align-items: center!;
+    font: normal normal normal 14px/16px Helvetica Neue;
+    letter-spacing: 0px;
+    color: #888888;
+    opacity: 1;
+    text-decoration: none;
+}
+
+
+
+
+
+
+footer {
+
+    width: 1500px;
+    height: 293px;
+    background: #707070 0% 0% no-repeat padding-box;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
+    
+}
+
+footer .container{
+    margin-top: 157px;
+    margin-bottom: 86px;
+}
+
+footer p {
+    margin: 5px 0;
+    
+}
