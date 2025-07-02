@@ -125,7 +125,6 @@ header nav a{
 
 
 footer {
-
     width: 1500px;
     height: 293px;
     background: #707070 0% 0% no-repeat padding-box;
@@ -135,8 +134,7 @@ footer {
     font-size: 0.9em;
     display: flex;
     flex-direction: column;
-    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
-    
+    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);   
 }
 
 footer .container{
