@@ -1,9 +1,13 @@
+*{
+    background-color: #FFFFFF 0% 0% no-repeat padding-box;
+}
+
 body {
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
     color: #333;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: white;
     max-width: 1500px;
 }
 
@@ -164,9 +168,11 @@ header nav a{
 }
 
 .label {
-  font-size: 12px;
-  margin-bottom: 7px; /* espaço entre label e input */
-  display: block;
+    text-align: left;
+    font: normal normal normal 12px/14px Helvetica Neue;
+    letter-spacing: 0px;
+    color: #888888;
+    opacity: 1;
 }
 
 .input {
@@ -241,21 +247,19 @@ button {
 
 #product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 200px); /* 4 colunas fixas de 200px */
-    gap: 41px;                               /* Espaço entre os cards */
-    width: 923px;                            /* Largura total fixa */
-    margin: 0 auto;                          /* Centraliza na tela */
+    grid-template-columns: repeat(4, 200px); 
+    gap: 41px;                               
+    width: 923px;                            
+    margin: 0 auto;                          
     padding: 40px 0;
+    background-color: #FFFFFF 0% 0% no-repeat padding-box;
 }
 
 .product-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     width:200px ;
     margin-bottom: 39px;
+    
 }
 
 .product-card img {
@@ -337,12 +341,39 @@ button {
     margin-bottom: 128;
 }
 
+.indication{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .indication h2{
+    margin: 0;
     text-align: center;
     font: normal normal normal 14px/16px Helvetica Neue;
     letter-spacing: 0px;
     color: #888888;
     opacity: 1;
+    margin-bottom: 39px;
+}
+
+
+.indication-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 720px;
+    gap: 40px;
+}
+
+.indication-form input {
+   width: 340px;
+   margin-bottom: 50px;
+}
+
+.indication button{
+    width: 260px;
 }
 
 
