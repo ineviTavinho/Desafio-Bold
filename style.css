@@ -64,7 +64,10 @@ header{
     
 }
 
-
+button:hover{
+    background-color: #555;
+    color: white;
+}
 .page-top p{
     padding-top: 0;
     top: 164px;
@@ -85,8 +88,8 @@ header nav{
 }
 
 header nav li:hover{
-    background-color: #777;
-    color: black!;
+    background-color: #555;
+    color: white;
 }
 
 header nav li{
@@ -389,7 +392,8 @@ footer {
     font-size: 0.9em;
     display: flex;
     flex-direction: column;
-    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);   
+    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
+    margin-top: 71.76px;   
 }
 
 footer .container{
@@ -400,4 +404,115 @@ footer .container{
 footer p {
     margin: 5px 0;
     
+}
+
+
+@media (max-width: 420px) {
+    body {
+        max-width: 420px;
+    }
+
+    header {
+        height: auto;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        padding-bottom: 40px;
+    }
+
+    .page-top h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        width: 90%;
+    }
+
+    .page-top h2 {
+        font-size: 18px;
+        width: 90%;
+    }
+
+    .page-top p {
+        width: 90%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    header nav li {
+        width: 80%;
+    }
+
+    .register-form {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    #text-form {
+        height: auto;
+        text-align: center;
+    }
+
+    #content-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .input, #content-form button {
+        width: 100%;
+        box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+    }
+
+    .section-divider {
+        font-size: 16px;
+        margin: 40px auto;
+    }
+
+    #product-grid {
+        grid-template-columns: 1fr;
+        width: 90%;
+        gap: 20px;
+    }
+
+    .product-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .product-card img, .product-card p, .product-card button {
+        width: 100%;
+    }
+
+    .indication-form {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 90%;
+    }
+
+    .indication-form #content-form {
+        width: 100%;
+    }
+
+    .indication-form input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .indication button {
+        width: 80%;
+    }
+
+    footer {
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        height: auto;
+        padding: 40px 0 20px 0;
+    }
+
+    footer .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }

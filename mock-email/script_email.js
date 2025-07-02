@@ -1,44 +1,38 @@
-
-
-class productManager{
-
-    constructor(){
+class ProductManager {
+    constructor() {
         this.apiBaseUrl = "https://desafio-api.bold.workers.dev/products";
         this.currentPage = 1;
-        this.productGrid  = document.getElementById('product-grid');
+        this.productGrid = document.getElementById('product-grid');
         this.loadMoreButton = document.getElementById('load-more-button');
-        console.log('Botão:', this.loadMoreButton);
         this.isLoading = false;
 
         this.init();
     }
 
-
-    init(){
+    init() {
         this.loadProducts();
         this.setupEventListeners();
-
     }
 
     setupEventListeners() {
-    if (this.loadMoreButton) {
-        console.log('Botão pronto para ouvir clique.');
-        this.loadMoreButton.addEventListener('click', () => {
-            console.log('Botão clicado!');
-            this.loadMoreProducts();
-        });
+        if (this.loadMoreButton) {
+            console.log('Botão pronto para ouvir clique.');
+            this.loadMoreButton.addEventListener('click', () => {
+                console.log('Botão clicado!');
+                this.loadMoreProducts();
+            });
+        }
     }
-}
+
     /**
      * Load products from API
      * @param {number} page - Page number to load
      */
-
     async loadProducts(page = 1) {
         if (this.isLoading) return;
         
         this.isLoading = true;
-        this.updateLoadMoreButton('Carregando...');
+        this.updateLoadMoreButton('Carregando...', false);
 
         try {
             const response = await fetch(`${this.apiBaseUrl}?page=${page}`);
@@ -53,14 +47,14 @@ class productManager{
             // Update next page info
             if (data.nextPage) {
                 this.currentPage = page + 1;
-                this.updateLoadMoreButton('Ainda mais produtos aqui!');
+                this.updateLoadMoreButton('Tem muito mais aqui. Vem ver!', true);
             } else {
                 this.hideLoadMoreButton();
             }
             
         } catch (error) {
             console.error('Error loading products:', error);
-            this.updateLoadMoreButton('Erro ao carregar produtos');
+            this.updateLoadMoreButton('Erro ao carregar produtos', true);
         } finally {
             this.isLoading = false;
         }
@@ -102,12 +96,26 @@ class productManager{
             <div class="old-price">De: ${formattedOldPrice}</div>
             <div class="price">Por: ${formattedPrice}</div>
             <div class="installments">ou ${product.installments.count}x de ${formattedInstallmentValue}</div>
-            <button id = "buy-button" type="button">Comprar</button>
+            <button class="buy-button" type="button">Comprar</button>
         `;
+        
+        // Add click event to buy button
+        const buyButton = card.querySelector('.buy-button');
+        buyButton.addEventListener('click', () => {
+            this.handleBuyClick(product);
+        });
         
         return card;
     }
 
+    /**
+     * Handle buy button click
+     * @param {Object} product - Product object
+     */
+    handleBuyClick(product) {
+        alert(`Produto "${product.name}" adicionado ao carrinho!`);
+        console.log('Produto selecionado:', product);
+    }
 
     /**
      * Format price to Brazilian currency format
@@ -124,23 +132,28 @@ class productManager{
     /**
      * Update load more button text
      * @param {string} text - Button text
+     * @param {boolean} enable - Enable/disable button
      */
     updateLoadMoreButton(text, enable = true) {
-        this.loadMoreButton.textContent = text;
-        this.loadMoreButton.disabled = !enable;
+        if (this.loadMoreButton) {
+            this.loadMoreButton.textContent = text;
+            this.loadMoreButton.disabled = !enable;
+        }
     }
 
     /**
      * Hide load more button
      */
     hideLoadMoreButton() {
-        this.loadMoreButton.style.display = 'none';
+        if (this.loadMoreButton) {
+            this.loadMoreButton.style.display = 'none';
+        }
     }
 }
 
 // Initialize the product manager when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    new productManager();
-    console.log('DOM carregado');
+    new ProductManager();
+    console.log('DOM carregado e ProductManager inicializado no mock-email.');
 });
 
