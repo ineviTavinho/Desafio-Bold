@@ -4,6 +4,7 @@ body {
     color: #333;
     line-height: 1.6;
     background-color: #f4f4f4;
+    max-width: 1500px;
 }
 
 header{
@@ -117,6 +118,126 @@ header nav a{
     color: #888888;
     opacity: 1;
     text-decoration: none;
+}
+
+
+.register-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  gap: 60px;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #888;
+}
+
+.register-form,
+.section-divider {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#text-form {
+  flex: 1;
+  max-width: 520px;
+  height: 220px ;
+
+}
+
+#text-form h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#text-form p {
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 20px;
+}
+
+#content-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.label {
+  font-size: 12px;
+  margin-bottom: 7px; /* espaço entre label e input */
+  display: block;
+}
+
+.input {
+  height: 30px;
+  width: 340px;
+  border: 1px solid #888;
+  margin-bottom: 20px; /* espaço entre input e próxima label */
+}
+
+#boxes {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+.check-box {
+  margin: 0;
+  width: 14px;
+  height: 14px;
+  accent-color: #888;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#boxes .label {
+  margin: 0;
+  font-size: 12px;
+}
+
+.label-inline {
+  font-size: 12px;
+  margin-right: 15px;
+}
+
+button {
+  height: 39px;
+  border: 1px solid #707070;
+  background: #FFFFFF;
+  border-radius: 4px;
+  color: #888;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+#content-form button{
+    margin: 0;
+    padding: 0;
+    width: 340px;
+    align-items: center;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px auto;
+  color: #707070;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: #707070;
+  margin: 0 20px;
 }
 
 
