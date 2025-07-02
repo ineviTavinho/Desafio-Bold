@@ -57,7 +57,9 @@ Para executar este projeto localmente, siga os passos abaixo:
 *   **Navegação**: Links para diferentes seções da página.
 *   **E-mail Mock**: Um exemplo de e-mail HTML/CSS/JS para demonstração.
 
+## Pendências:
 
+ * **Erro na formatação do header na versão mobile, o corte no header tirou alguns componentes da tela (Botões da nav)
 
 
 ## Como Contribuir
