@@ -93,8 +93,7 @@ header nav li:hover{
 }
 
 header nav li{
-    top: 230px;
-    left: 371px;
+
     width: 160px;
     height: 40px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -408,111 +407,330 @@ footer p {
 
 
 @media (max-width: 420px) {
+
+    *{
+        background-color: #FFFFFF 0% 0% no-repeat padding-box;
+    }
+
     body {
-        max-width: 420px;
+        margin: 0;
+        font-family: 'Helvetica Neue', sans-serif;
+        color: #333;
+        line-height: 1.6;
+        background-color: white;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
     }
-
-    header {
-        height: auto;
-        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-        padding-bottom: 40px;
-    }
-
-    .page-top h1 {
-        font-size: 30px;
-        line-height: 1.2;
-        width: 90%;
-    }
-
-    .page-top h2 {
-        font-size: 18px;
-        width: 90%;
-    }
-
-    .page-top p {
-        width: 90%;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    header nav li {
-        width: 80%;
-    }
-
-    .register-form {
-        flex-direction: column;
-        align-items: center;
-        padding: 0 20px;
-    }
-
-    #text-form {
-        height: auto;
+    header{
+        top: 0px;
+        left: 0px;
+        width: 420px;
+        height: 397.89px;
+        /* UI Properties */
+        background: #707070 0% 0% no-repeat padding-box;
+        border: 1px solid #707070;
+        opacity: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
         text-align: center;
     }
 
+    .page-top{
+        margin-left: 0;
+    }
+
+    .page-top h1{
+        width: 358px;
+        height: 48px;
+        text-align: left;
+        font: normal normal bold 40px/49px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+    }
+
+    .page-top h2{
+        width: 227px;
+        height: 23px;
+        text-align: left;
+        font: normal normal normal 20px/24px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        margin-top: 66px;
+    }
+
+    .page-top p{
+        width: 359px;
+        height: 32px;
+        /* UI Properties */
+        text-align: left;
+        font: normal normal normal 14px/16px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        margin-bottom: 20px;
+    }
+
+    header nav li{
+        min-width: 160px;
+        min-height: 40px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 6px #00000029;
+        border: 1px solid #707070;
+        border-radius: 4px;
+        opacity: 1;
+    }
+
+
+    header nav ul{
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr; 
+    }
+
+    .register-form {
+        margin-top:29.11px ;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-left: 16px;
+        font-family: 'Helvetica Neue', sans-serif;
+        color: #888;
+        padding: 0;
+        gap: 5px;
+    }
+
+    #text-form {
+        flex: 1;
+        max-width: 420px;
+        height: 220px ;
+    }
+
+    #text-form h2 {
+        width: 332px;
+        height: 23px;
+        text-align: left;
+        font: normal normal normal 20px/24px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #888888;
+        opacity: 1;
+    }
+
+    #text-form p {
+        max-width: 386px;
+        max-height: 220px;
+        margin-bottom: 20px;
+        text-align: left;
+        font: normal normal normal 12px/18px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #888888;
+        opacity: 1;
+        
+    }
+
     #content-form {
-        width: 100%;
-        max-width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin-top: 20px;
     }
 
-    .input, #content-form button {
-        width: 100%;
-        box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+    .label {
+        height: 14;
+        width: 58;
+        text-align: left;
+        font: normal normal normal 12px/14px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #888888;
+        opacity: 1;
     }
 
-    .section-divider {
-        font-size: 16px;
-        margin: 40px auto;
+    .input {
+        height: 30px;
+        width: 385px;
+        border: 1px solid #888;
+        margin-bottom: 20px; /* espaço entre input e próxima label */
+    }
+
+    #boxes {
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    #boxes .label {
+        margin: 0;
+        font-size: 12px;
+    }
+
+
+    button {
+        height: 39px;
+        border: 1px solid #707070;
+        background: #FFFFFF;
+        border-radius: 4px;
+        color: #888;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+
+    #content-form button{
+        margin-left: 2px;
+        padding: 0;
+        width: 383px;
+        align-items: center;
+    }
+
+     #load-more {
+        margin-bottom: 91px; /* 91px até "sua seleção especial" */
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+
+    .card-mobile{
+        display: flex;
+        flex-direction: row;
+        gap:23px
     }
 
     #product-grid {
-        grid-template-columns: 1fr;
-        width: 90%;
-        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(1, 200px); 
+        gap: 15px;                               
+        width: 392px;                            
+        margin-top: 23px;                         
+        background-color: #FFFFFF 0% 0% no-repeat padding-box;
     }
 
-    .product-card {
-        width: 100%;
-        margin-bottom: 20px;
+    .product-card img {
+        margin: 0;
+        width: 169px;
+        height: 129px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #707070;
+        opacity: 1;
     }
 
-    .product-card img, .product-card p, .product-card button {
-        width: 100%;
+    .product-card h4 {
+        width: 111px;
+        height: 16px;
+        text-align: left;
+        font: normal normal normal 14px/16px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #888888;
+        opacity: 1;
+        margin-top: 0px;
+        margin-bottom: 13px;
     }
 
+    .product-card p {
+        height: 0px;
+        width: 200px;
+        text-align: left;
+        font: normal normal normal 12px/16px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #888888;
+        opacity: 1;
+        margin-bottom: 0;
+        visibility: hidden;
+    }
+
+    .product-card .old-price {
+        width: 90px;
+        height: 14px;
+        text-align: left;
+        font: normal normal normal 12px/16px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #888888;
+        opacity: 1;
+        margin-bottom: 6px;
+    }
+
+    .product-card .price {
+        width: 102px;
+        height: 19px;
+        font: normal normal bold 16px/16px Helvetica Neue;
+        margin-bottom: 7px;
+    }
+
+    .product-card .installments {
+        width: 105px;
+        height: 14px;
+        text-align: left;
+        font: normal normal normal 12px/16px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #888888;
+        opacity: 1;
+        margin-bottom: 10px;
+    }
+
+    .product-card button {
+        height: 30px;
+        width: 200px;
+        
+    }
+
+    .details-mobile{
+        height: 169px ;
+        width: 129px ;
+    }
+
+    .indication h2{
+        width: 386px;
+        height: 32px;
+        text-align: center;
+        font: normal normal normal 14px/16px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #888888;
+        opacity: 1;
+    }
     .indication-form {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        width: 90%;
-    }
-
-    .indication-form #content-form {
-        width: 100%;
+        justify-content: center;
+        max-width: 420px;
+        gap: 10px;
     }
 
     .indication-form input {
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 20px;
+    width: 391px;
+    margin-bottom: 20px;
     }
+
 
     .indication button {
-        width: 80%;
+        width: 260px;
+        margin-bottom: 85px; /* 85px entre botão e footer */
     }
 
-    footer {
-        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
-        height: auto;
-        padding: 40px 0 20px 0;
+    footer .container{
+        width: 260px;
+        height: 50px;
+        text-align: center;
+        font: normal normal normal 12px/18px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        margin-left: 80px;
     }
 
-    footer .container {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+
+
+
+    
+    
+
+
+
+
+
+
+    
 }

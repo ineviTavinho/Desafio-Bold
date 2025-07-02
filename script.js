@@ -96,13 +96,19 @@ class productManager{
         const formattedInstallmentValue = this.formatPrice(product.installments.value);
         
         card.innerHTML = `
-            <img src="https:${product.image}" alt="${product.name}" loading="lazy">
-            <h4>${product.name}</h4>
-            <p>${product.description}</p>
-            <div class="old-price">De: ${formattedOldPrice}</div>
-            <div class="price">Por: ${formattedPrice}</div>
-            <div class="installments">ou ${product.installments.count}x de ${formattedInstallmentValue}</div>
-            <button id = "buy-button" type="button">Comprar</button>
+            <div class = "card-mobile">
+                <section>
+                    <img src="https:${product.image}" alt="${product.name}" loading="lazy">
+                </section>
+                <section class="details-mobile">
+                    <h4>${product.name}</h4>
+                    <p>${product.description}</p>
+                    <div class="old-price">De: ${formattedOldPrice}</div>
+                    <div class="price">Por: ${formattedPrice}</div>
+                    <div class="installments">ou ${product.installments.count}x de ${formattedInstallmentValue}</div>
+                    <button id = "buy-button" type="button">Comprar</button>
+                </section>
+            </div>
         `;
         
         return card;
@@ -110,7 +116,7 @@ class productManager{
 
 
     /**
-     * Format price to Brazilian currency format
+     * Format price to Brazilian format
      * @param {number} price - Price value
      * @returns {string} Formatted price string
      */
@@ -142,5 +148,173 @@ class productManager{
 document.addEventListener('DOMContentLoaded', () => {
     new productManager();
     console.log('DOM carregado');
+});
+
+
+class NewsletterManager {
+    constructor() {
+        this.form = document.getElementById('newsletter-form');
+        this.nameInput = document.getElementById('friend-name');
+        this.emailInput = document.getElementById('friend-email');          
+        
+        this.init();
+    }
+
+    /**
+     * Initialize the newsletter manager
+     */
+    init() {
+        this.setupEventListeners();
+    }
+
+    /**
+     * Set up event listeners
+     */
+    setupEventListeners() {
+        this.form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleSubmit();
+        });
+
+        // Real-time validation
+        this.nameInput.addEventListener('blur', () => {
+            this.validateName();
+        });
+
+        this.emailInput.addEventListener('blur', () => {
+            this.validateEmail();
+        });
+    }
+
+    /**
+     * Handle form submission
+     */
+    handleSubmit() {
+        const isNameValid = this.validateName();
+        const isEmailValid = this.validateEmail();
+
+        if (isNameValid && isEmailValid) {
+            this.submitForm();
+        }
+    }
+
+    /**
+     * Validate name field
+     * @returns {boolean} Validation result
+     */
+    validateName() {
+        const name = this.nameInput.value.trim();
+        
+        if (name.length < 2) {
+            this.showFieldError(this.nameInput, 'Nome deve ter pelo menos 2 caracteres');
+            return false;
+        }
+        
+        if (!/^[a-zA-ZÀ-ÿ\s]+$/.test(name)) {
+            this.showFieldError(this.nameInput, 'Nome deve conter apenas letras');
+            return false;
+        }
+        
+        this.clearFieldError(this.nameInput);
+        return true;
+    }
+
+    /**
+     * Validate email field
+     * @returns {boolean} Validation result
+     */
+    validateEmail() {
+        const email = this.emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(email)) {
+            this.showFieldError(this.emailInput, 'Por favor, insira um email válido');
+            return false;
+        }
+        
+        this.clearFieldError(this.emailInput);
+        return true;
+    }
+
+    /**
+     * Show field error message
+     * @param {HTMLElement} field - Input field element
+     * @param {string} message - Error message
+     */
+    showFieldError(field, message) {
+        this.clearFieldError(field);
+        
+        const errorElement = document.createElement('div');
+        errorElement.className = 'field-error';
+        errorElement.textContent = message;
+        errorElement.style.color = '#e74c3c';
+        errorElement.style.fontSize = '0.8em';
+        errorElement.style.marginTop = '0px';
+        errorElement.style.margin = '0px'
+        
+        field.parentNode.appendChild(errorElement);
+        field.style.borderColor = '#e74c3c';
+    }
+
+    /**
+     * Clear field error message
+     * @param {HTMLElement} field - Input field element
+     */
+    clearFieldError(field) {
+        const existingError = field.parentNode.querySelector('.field-error');
+        if (existingError) {
+            existingError.remove();
+        }
+        field.style.borderColor = '#ddd';
+    }
+
+    /**
+     * Submit form data
+     */
+    submitForm() {
+        const formData = {
+            name: this.nameInput.value.trim(),
+            email: this.emailInput.value.trim()
+        };
+
+        // Simulate submission
+        console.log('Form submitted:', formData);
+        
+        // Show success message
+        this.showSuccessMessage();
+        
+        // Reset form
+        this.form.reset();
+    }
+
+    /**
+     * Show success message
+     */
+    showSuccessMessage() {
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.textContent = 'Obrigado! Seu amigo receberá nossas novidades em breve.';
+        successMessage.style.cssText = `
+            background-color: #555;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            position: absolute;
+        `;
+        
+        this.form.appendChild(successMessage);
+        
+        // Remove success message after 5 seconds
+        setTimeout(() => {
+            successMessage.remove();
+        }, 2000);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new productManager();
+    new NewsletterManager();
 });
 
