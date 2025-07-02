@@ -24,6 +24,11 @@ Este projeto é uma página web desenvolvida como parte de um desafio, com o obj
 
 Para executar este projeto localmente, siga os passos abaixo:
 
+1. **Acesse o Live preview:**
+   ```bash
+    https://vercel.com/inevitavinhos-projects/desafio-bold
+   ```
+
 1.  **Clone o repositório:**
 
     ```bash
