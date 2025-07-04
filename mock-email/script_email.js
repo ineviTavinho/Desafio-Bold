@@ -18,7 +18,6 @@ class ProductManager {
     if (this.loadMoreButton) {
         console.log('Botão pronto para ouvir clique.');
         this.loadMoreButton.addEventListener('click', () => {
-            console.log('Botão clicado! Redirecionando para index.html');
             window.location.href = '../index.html';
         });
     }
@@ -114,7 +113,6 @@ class ProductManager {
      */
     handleBuyClick(product) {
         alert(`Produto "${product.name}" adicionado ao carrinho!`);
-        console.log('Produto selecionado:', product);
     }
 
     /**
@@ -154,6 +152,5 @@ class ProductManager {
 // Initialize the product manager when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     new ProductManager();
-    console.log('DOM carregado e ProductManager inicializado no mock-email.');
 });
 

@@ -7,7 +7,6 @@ class productManager{
         this.currentPage = 1;
         this.productGrid  = document.getElementById('product-grid');
         this.loadMoreButton = document.getElementById('load-more-button');
-        console.log('Botão:', this.loadMoreButton);
         this.isLoading = false;
 
         this.init();
@@ -22,9 +21,7 @@ class productManager{
 
     setupEventListeners() {
     if (this.loadMoreButton) {
-        console.log('Botão pronto para ouvir clique.');
         this.loadMoreButton.addEventListener('click', () => {
-            console.log('Botão clicado!');
             this.loadMoreProducts();
         });
     }
@@ -147,7 +144,6 @@ class productManager{
 // Initialize the product manager when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     new productManager();
-    console.log('DOM carregado');
 });
 
 
@@ -275,10 +271,7 @@ class NewsletterManager {
         const formData = {
             name: this.nameInput.value.trim(),
             email: this.emailInput.value.trim()
-        };
-
-        // Simulate submission
-        console.log('Form submitted:', formData);
+        }
         
         // Show success message
         this.showSuccessMessage();
